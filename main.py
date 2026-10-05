@@ -25,7 +25,7 @@ plantacoes = [
 		"id": 2,
 		"nome": "Talhão Sul",
         "cultura": "Soja",
-		"localizacao": "Fazenda Horizonte, Itapecerica da Serra" - SP",
+		"localizacao": "Fazenda Horizonte, Itapecerica da Serra - SP",
 		"status": "em operação",
 		"data_plantio": "2026-08-20",
 	},
@@ -68,4 +68,43 @@ insumos = [
 		"compativel_com_aplicacao_por_drone": True,
 	},
 ]
+
+quadrantes_por_plantacao = 4
+estados_validos = ["pendente", "em aplicação", "concluído"]
+
+# Cada linha representa um talhão; cada coluna representa um quadrante.
+matriz_estado = [
+	["pendente" for _ in range(quadrantes_por_plantacao)]
+	for _ in plantacoes
+]
+
+
+def atualizar_estado(talhao, quadrante, novo_estado):
+	if talhao >= 1 and talhao <= len(plantacoes):
+		if quadrante >= 1 and quadrante <= quadrantes_por_plantacao:
+			if novo_estado in estados_validos:
+				matriz_estado[talhao - 1][quadrante - 1] = novo_estado
+			else:
+				print("Estado inválido.")
+		else:
+			print("Quadrante inválido.")
+	else:
+		print("Talhão inválido.")
+
+
+def exibir_matriz_estado():
+	print("Estado dos quadrantes das plantações")
+	print(f"{'Talhão':<16}", end="")
+	for quadrante in range(1, quadrantes_por_plantacao + 1):
+		print(f"{'Quadrante ' + str(quadrante):<16}", end="")
+	print()
+
+	for indice_talhao in range(len(plantacoes)):
+		print(f"{plantacoes[indice_talhao]['nome']:<16}", end="")
+		for estado in matriz_estado[indice_talhao]:
+			print(f"{estado:<16}", end="")
+		print()
+
+
+exibir_matriz_estado()
 
