@@ -108,3 +108,78 @@ def exibir_matriz_estado():
 
 exibir_matriz_estado()
 
+def menu():
+    while True:
+        print("\n===== AgroTech =====")
+        print("[1] Ver dados da empresa")
+        print("[2] Ver plantações")
+        print("[3] Ver drones")
+        print("[4] Ver insumos")
+        print("[5] Ver matriz de estado")
+        print("[6] Atualizar estado de quadrante")
+        print("[0] Sair")
+
+        opcao = input("Escolha uma opção: ").strip()
+
+        if opcao == "1":
+            print("\nEmpresa:", empresa["nome"])
+            print("Segmento:", empresa["segmento"])
+            print("Cidade:", empresa["endereco"]["cidade"])
+
+        elif opcao == "2":
+            for plantacao in plantacoes:
+                print("\nID:", plantacao["id"])
+                print("Nome:", plantacao["nome"])
+                print("Cultura:", plantacao["cultura"])
+                print("Status:", plantacao["status"])
+
+        elif opcao == "3":
+            for drone in drones:
+                print("\nID:", drone["id"])
+                print("Modelo:", drone["modelo"])
+                print("Status:", drone["status"])
+                print("Horas de voo:", drone["horas_voo"])
+
+        elif opcao == "4":
+            for insumo in insumos:
+                print("\nNome:", insumo["nome"])
+                print("Estoque atual:", insumo["estoque_atual"], insumo["unidade"])
+                print("Estoque mínimo:", insumo["estoque_minimo"])
+
+        elif opcao == "5":
+            exibir_matriz_estado()
+
+        elif opcao == "6":
+            talhao = input("Digite o número do talhão (1 ou 2): ")
+            quadrante = input("Digite o quadrante (1 a 4): ")
+
+            if talhao.isdigit() and quadrante.isdigit():
+                talhao = int(talhao)
+                quadrante = int(quadrante)
+
+                print("\n[1] Pendente")
+                print("[2] Em aplicação")
+                print("[3] Concluído")
+
+                estado = input("Escolha o novo estado: ")
+
+                if estado == "1":
+                    atualizar_estado(talhao, quadrante, "pendente")
+                elif estado == "2":
+                    atualizar_estado(talhao, quadrante, "em aplicação")
+                elif estado == "3":
+                    atualizar_estado(talhao, quadrante, "concluído")
+                else:
+                    print("Opção de estado inválida.")
+            else:
+                print("Digite apenas números no talhão e quadrante.")
+
+        elif opcao == "0":
+            print("Sistema encerrado.")
+            break
+
+        else:
+            print("Opção inválida. Tente novamente.")
+
+
+menu()
