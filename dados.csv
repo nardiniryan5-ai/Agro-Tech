@@ -1,0 +1,58 @@
+tipo,registro,campo,valor
+empresa,,nome,AgroTech
+empresa,,razao_social,AgroTech Tecnologia Agricola Ltda.
+empresa,,segmento,Agronegócio e tecnologia de aplicação com drones
+empresa,,descricao,Controle de plantações e gestão de insumos para operações com drones.
+empresa,endereco,cidade,Itapecerica da Serra
+empresa,endereco,estado,São Paulo
+empresa,endereco,email,contato@agrotech.com
+empresa,endereco,telefone,55+ (11) 99999-9999
+plantacao,1,id,1
+plantacao,1,nome,Talhão Norte
+plantacao,1,cultura,Soja
+plantacao,1,area_hectares,42.5
+plantacao,1,localizacao,"Fazenda Horizonte, São Paulo - SP"
+plantacao,1,status,em operação
+plantacao,1,data_plantio,2026-09-15
+plantacao,2,id,2
+plantacao,2,nome,Talhão Sul
+plantacao,2,cultura,Soja
+plantacao,2,localizacao,"Fazenda Horizonte, Itapecerica da Serra - SP"
+plantacao,2,status,em operação
+plantacao,2,data_plantio,2026-08-20
+drone,DR-001,id,DR-001
+drone,DR-001,modelo,DJI Agras T50
+drone,DR-001,capacidade_tanque_litros,10
+drone,DR-001,status,disponivel
+drone,DR-001,horas_voo,125.5
+drone,DR-002,id,DR-002
+drone,DR-002,modelo,DJI Agras T100
+drone,DR-002,capacidade_tanque_litros,20
+drone,DR-002,status,em_manutencao
+drone,DR-002,horas_voo,318.0
+insumo,INS-001,id,INS-001
+insumo,INS-001,nome,Fertilizante foliar
+insumo,INS-001,categoria,fertilizante
+insumo,INS-001,unidade,litro
+insumo,INS-001,estoque_atual,240
+insumo,INS-001,estoque_minimo,50
+insumo,INS-001,compativel_com_aplicacao_por_drone,True
+insumo,INS-002,id,INS-002
+insumo,INS-002,nome,Biofungicida
+insumo,INS-002,categoria,defensivo_biologico
+insumo,INS-002,unidade,litro
+insumo,INS-002,estoque_atual,80
+insumo,INS-002,estoque_minimo,30
+insumo,INS-002,compativel_com_aplicacao_por_drone,True
+configuracao,,quadrantes_por_plantacao,4
+estado_valido,1,valor,pendente
+estado_valido,2,valor,em aplicação
+estado_valido,3,valor,concluído
+matriz_estado,1,quadrante_1,pendente
+matriz_estado,1,quadrante_2,pendente
+matriz_estado,1,quadrante_3,pendente
+matriz_estado,1,quadrante_4,pendente
+matriz_estado,2,quadrante_1,pendente
+matriz_estado,2,quadrante_2,pendente
+matriz_estado,2,quadrante_3,pendente
+matriz_estado,2,quadrante_4,pendente
