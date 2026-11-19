@@ -3,9 +3,9 @@
 https://github.com/user-attachments/assets/59d8d54a-4bc4-40b8-a3cd-92c26c881a93
 
 2° F-DS
-Ryan Nardini Pereira
-Isaque Rodrigues Da Silva
-Rafael Henrique Trajano
+- Ryan Nardini Pereira
+- Isaque Rodrigues Da Silva
+- Rafael Henrique Trajano
 
 Agronegócio: Controle de plantação e insumos para drones
 
